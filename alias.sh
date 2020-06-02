@@ -1,6 +1,8 @@
-alias flutterg='export FLUTTER_HOME=/Users/hongyun/source/flutter/flutter;export FLUTTER_ROOT=/Users/hongyun/source/flutter/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
-alias flutterf='export FLUTTER_HOME=/Users/hongyun/source/fwn_idlefish/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
-flutterf
+#flutter concern
+alias flutterg='export FLUTTER_HOME=/Users/hongyun/source/personal/flutter-sdk/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
+alias flutterf='export FLUTTER_HOME=/Users/hongyun/source/work/app/fwn_idlefish/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
+flutterg
+alias fgu='flutter pub get;flutter pub upgrade'
 
 #git alias
 alias gs='git status'
@@ -32,3 +34,4 @@ alias closeDebug='cp /Users/hongyun/source/personal/env-config/close_debug.prope
 #实验中的
 alias .='echo $PWD'
 alias rm='rm -i'
+alias cdG='cd /Users/hongyun/source/personal/'
