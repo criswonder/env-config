@@ -18,6 +18,10 @@ export ANDROID_HOME=/Users/hongyun/environment/android-sdk-macosx
 export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/${nm_sub_dir}
 #export NDK_HOME=/Users/hongyun/source/cpp/ffmpeg/android-ndk-r17c
 
+#flutter cn镜像 https://flutter.cn/community/china
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
 # set the number of open files to be 1024
 # https://ss64.com/bash/ulimit.html
 # -S   Set a soft limit for the given resource.
