@@ -1,7 +1,7 @@
 #flutter concern
 alias flutterg='export FLUTTER_HOME=/Users/hongyun/source/personal/flutter-sdk/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
 alias flutterf='export FLUTTER_HOME=/Users/hongyun/source/work/app/fwn_idlefish/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
-flutterg
+flutterf
 alias fgu='flutter pub get;flutter pub upgrade'
 
 #git alias
