@@ -42,8 +42,9 @@ alias cdG='cd /Users/hongyun/source/personal/'
 
 #安装ve插件
 alias cve='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug'
-alias ive='adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;'
-alias cive='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug;adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;'
+alias ive='adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
+alias cive='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug;adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
+
 #./gradlew :plugins:vesdkplugin:assemblRelease
 #重启西瓜app
 alias rapp='adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;'
