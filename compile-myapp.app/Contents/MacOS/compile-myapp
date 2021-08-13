@@ -1,0 +1,5 @@
+#!/bin/sh
+echo 'hahaha'
+cd /Users/hongyun/source/work-fixbug/ttvideoapp
+echo 'hshdfsdf' > abc.txt
+./localbuild > ~/tmp/compile.log &

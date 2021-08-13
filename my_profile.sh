@@ -45,5 +45,8 @@ ulimit -S -n 1024
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export PATH=/Users/hongyun/source/personal/depot_tools:/usr/local/opt/curl-openssl/bin:$PATH
 
+# homebrew配置
+export HOMEBREW_NO_AUTO_UPDATE=true
+
 source /Users/hongyun/source/personal/env-config/alias.sh
 

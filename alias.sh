@@ -58,13 +58,20 @@ alias frl='flutter run --local-engine-src-path=$FLUTTER_ENGINE_SRC --local-engin
 alias jettyrun='cd /Users/hongyun/source/personal/plantuml-server;mvn jetty:run'
 
 #systrace
-alias st-start='python /Users/hongyun/Library/Android/sdk/platform-tools/systrace/systrace.py'  
-# alias st-start-gfx-trace='st-start -t 8 gfx input view sched freq wm am hwui workq res dalvik sync disk load perf hal rs idle mmc'
+alias st-start='python2 /Users/hongyun/Library/Android/sdk/platform-tools/systrace/systrace.py'  
+alias st-start-gfx-trace='st-start gfx input view sched freq wm am hwui workq res dalvik sync disk load perf hal rs idle mmc'
 
 #ffmpeg相关
 alias ffprobe='ffprobe -hide_banner'
 alias ffmpeg='ffmpeg -hide_banner'
 alias ffplay='ffplay -hide_banner'
 alias mffprobe='my_func(){ adb pull $1 mffprobe_tmp.mp4;ffprobe -hide_banner mffprobe_tmp.mp4};my_func'
-alias m='./localbuild;date'
+alias m='/Users/hongyun/source/personal/env-config/compile_dy.sh'
 alias M=m
+alias agco='my_func(){origin_path=`pwd`;gco $1;cd ../XiGuaPublish;pwd;gco $1;cd ../xigua_common;pwd;gco $1;cd $origin_path};my_func'
+alias agcob='my_func(){origin_path=`pwd`;gco -b $1;cd ../XiGuaPublish;pwd;gco -b $1;cd ../xigua_common;pwd;gco -b $1;cd $origin_path};my_func'
+alias agpr='my_func(){origin_path=`pwd`;gpr;cd ../XiGuaPublish;pwd;gpr;cd ../xigua_common;pwd;gpr;cd $origin_path};my_func'
+
+
+# 打开app的快捷方式
+# alias appify='/Users/hongyun/source/personal/env-config/alias.sh'
