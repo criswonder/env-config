@@ -71,7 +71,8 @@ alias M=m
 alias agco='my_func(){origin_path=`pwd`;gco $1;cd ../XiGuaPublish;pwd;gco $1;cd ../xigua_common;pwd;gco $1;cd $origin_path};my_func'
 alias agcob='my_func(){origin_path=`pwd`;gco -b $1;cd ../XiGuaPublish;pwd;gco -b $1;cd ../xigua_common;pwd;gco -b $1;cd $origin_path};my_func'
 alias agpr='my_func(){origin_path=`pwd`;gpr;cd ../XiGuaPublish;pwd;gpr;cd ../xigua_common;pwd;gpr;cd $origin_path};my_func'
-
+alias xm='/Users/hongyun/source/personal/env-config/compile_dy_x_remote.sh'
+alias XM=xm
 
 # 打开app的快捷方式
 # alias appify='/Users/hongyun/source/personal/env-config/alias.sh'
