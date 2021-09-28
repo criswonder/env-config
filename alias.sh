@@ -26,8 +26,9 @@ alias gh='history|grep '
 alias hg='history|grep '
 
 #adb 
-alias adbg='adb logcat |grep '
-alias adbcg='adb logcat -c;adb logcat |grep '
+adb_str='adb logcat -G 50m;adb logcat -v time |grep '
+alias adbg=$adb_str
+alias adbcg="adb logcat -c;${adb_str}"
 alias adbc='adb logcat -c;adb logcat '
 alias add='adb devices'
 
@@ -41,18 +42,19 @@ alias rm='rm -i'
 alias cdG='cd /Users/hongyun/source/personal/'
 
 #安装ve插件
-alias cve='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug'
-alias ive='adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
-alias cive='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug;adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
-alias civer='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblRelease;adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
+# alias cve='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug'
+# alias ive='adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
+# alias cive='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug;adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
+# alias civer='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblRelease;adb push ./plugins/vesdkplugin/build/outputs/apk/debug/vesdkplugin-debug.apk sdcard/Android/data/com.ss.android.article.video/files/.patchs/;adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;date'
 
 #./gradlew :plugins:vesdkplugin:assemblRelease
-#重启西瓜app
-alias rapp='adb shell am force-stop com.ss.android.article.video 2>&1 | tee /dev/tty;adb shell am start -n com.ss.android.article.video/.activity.SplashActivity;'
+#重启app
+process_name="com.ss.android.ugc.aweme"
+main_act="com.ss.android.ugc.aweme/.splash.SplashActivity"
+alias rapp="adb shell am force-stop ${process_name} 2>&1 | tee /dev/tty;adb shell am start -n ${main_act}"
 
 #查看alias
 alias wcmd='which-command'
-alias frl='flutter run --local-engine-src-path=$FLUTTER_ENGINE_SRC --local-engine=$FLUTTER_ENGINE'
 
 #运行本地jetty的plant uml render server
 alias jettyrun='cd /Users/hongyun/source/personal/plantuml-server;mvn jetty:run'
@@ -66,13 +68,23 @@ alias ffprobe='ffprobe -hide_banner'
 alias ffmpeg='ffmpeg -hide_banner'
 alias ffplay='ffplay -hide_banner'
 alias mffprobe='my_func(){ adb pull $1 mffprobe_tmp.mp4;ffprobe -hide_banner mffprobe_tmp.mp4};my_func'
+
+#编译
 alias m='/Users/hongyun/source/personal/env-config/compile_dy.sh'
 alias M=m
-alias agco='my_func(){origin_path=`pwd`;gco $1;cd ../XiGuaPublish;pwd;gco $1;cd ../xigua_common;pwd;gco $1;cd $origin_path};my_func'
-alias agcob='my_func(){origin_path=`pwd`;gco -b $1;cd ../XiGuaPublish;pwd;gco -b $1;cd ../xigua_common;pwd;gco -b $1;cd $origin_path};my_func'
-alias agpr='my_func(){origin_path=`pwd`;gpr;cd ../XiGuaPublish;pwd;gpr;cd ../xigua_common;pwd;gpr;cd $origin_path};my_func'
 alias xm='/Users/hongyun/source/personal/env-config/compile_dy_x_remote.sh'
 alias XM=xm
+alias remotex_force="./start.sh -f pwd"
+alias remotex_stop="./start.sh ./gradlew --stop"
+alias remotex_clean="./start.sh ./gradlew clean"
 
 # 打开app的快捷方式
 # alias appify='/Users/hongyun/source/personal/env-config/alias.sh'
+
+#flutter
+alias frl='flutter run --local-engine-src-path=$FLUTTER_ENGINE_SRC --local-engine=$FLUTTER_ENGINE'
+
+#git checkout 分支
+# alias agco='my_func(){origin_path=`pwd`;gco $1;cd ../XiGuaPublish;pwd;gco $1;cd ../xigua_common;pwd;gco $1;cd $origin_path};my_func'
+# alias agcob='my_func(){origin_path=`pwd`;gco -b $1;cd ../XiGuaPublish;pwd;gco -b $1;cd ../xigua_common;pwd;gco -b $1;cd $origin_path};my_func'
+# alias agpr='my_func(){origin_path=`pwd`;gpr;cd ../XiGuaPublish;pwd;gpr;cd ../xigua_common;pwd;gpr;cd $origin_path};my_func'
