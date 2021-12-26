@@ -26,11 +26,15 @@ alias gh='history|grep '
 alias hg='history|grep '
 
 #adb 
-adb_str='adb logcat -G 50m;adb logcat -v time |grep '
+adb_set_buffer_size='adb -s $ANDROID_SERIAL logcat -G 50m'
+adb_clear='adb -s $ANDROID_SERIAL logcat -c'
+adb_str="${adb_set_buffer_size};adb -s $ANDROID_SERIAL logcat -v color threadtime |grep "
 alias adbg=$adb_str
-alias adbcg="adb logcat -c;${adb_str}"
-alias adbc='adb logcat -c;adb logcat '
+alias adbcg="${adb_clear};${adb_str}"
+alias adbc="${adb_clear};adb -s ${ANDROID_SERIAL} logcat "
 alias add='adb devices'
+alias adbtag="${adb_clear};${adb_set_buffer_size};adb -s ${ANDROID_SERIAL} logcat -v color tag -s "
+alias adblog="${adb_clear};${adb_set_buffer_size};adb -s ${ANDROID_SERIAL} logcat -v color time "
 
 #gradle debug
 alias openDebug='cp /Users/hongyun/source/personal/env-config/open_debug.properties ~/.gradle/gradle.properties'
@@ -39,7 +43,8 @@ alias closeDebug='cp /Users/hongyun/source/personal/env-config/close_debug.prope
 #实验中的
 alias .='echo $PWD'
 alias rm='rm -i'
-alias cdG='cd /Users/hongyun/source/personal/'
+alias cdD='cd /Users/hongyun/source/douying/aweme'
+alias cdDF='cd /Users/hongyun/source/douying-feature/aweme'
 
 #安装ve插件
 # alias cve='./gradlew :plugins:vesdkplugin:clean :plugins:vesdkplugin:assemblDebug'

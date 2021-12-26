@@ -1,19 +1,19 @@
 #!/bin/sh
 install(){
-	adb install ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
+	adb -s $ANDROID_SERIAL install ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
 	date;
 }
 
 restart(){
-	adb shell am force-stop com.ss.android.ugc.aweme;
-	adb shell am start -n com.ss.android.ugc.aweme/.splash.SplashActivity;
+	adb -s $ANDROID_SERIAL shell am force-stop com.ss.android.ugc.aweme;
+	adb -s $ANDROID_SERIAL shell am start -n com.ss.android.ugc.aweme/.splash.SplashActivity;
 	date;
 }
 
 compile(){
 	./gradlew :app:assembleDouyinCnDebug;
 }
-
+export ANDROID_SERIAL=9A261FFBA007DC
 unset compile_dy_options
 unset compile_dy_options_default
 compile_dy_options="default"

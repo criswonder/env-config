@@ -11,7 +11,7 @@ restart(){
 }
 
 compile(){
-	./start.sh -i ./gradlew :app:assembleDouyinCnDebug --max-workers=16;
+	./start.sh -i ./gradlew :app:assembleDouyinCnDebug --max-workers=32;
 }
 
 unset compile_dy_options
