@@ -21,6 +21,7 @@ export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDRO
 export PATH="/Users/hongyun/homebrew/opt/openjdk/bin:$PATH"
 #CPPFLAGS="-I/Users/hongyun/homebrew/opt/openjdk/include"
 export PATH="/Users/hongyun/homebrew/bin:$PATH"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
 
 #flutter cn镜像 https://flutter.cn/community/china
@@ -29,7 +30,11 @@ export PUB_HOSTED_URL=http://dart-pub.byted.org
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ##java 相关的
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+java8
 #flutter debug
 # export FLUTTER_ENGINE_SRC='/Users/hongyun/source/personal/githubflutter/engine/src'
 # export FLUTTER_ENGINE='/Users/hongyun/source/personal/githubflutter/engine/src/out/android_debug_unopt_arm64'
@@ -47,6 +52,8 @@ export PATH=/Users/hongyun/source/personal/depot_tools:/usr/local/opt/curl-opens
 
 # homebrew配置
 export HOMEBREW_NO_AUTO_UPDATE=true
+
+export ANDROID_SERIAL=9A261FFBA007DC
 
 source /Users/hongyun/source/personal/env-config/alias.sh
 
