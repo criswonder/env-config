@@ -13,7 +13,7 @@ restart(){
 compile(){
 	./gradlew :app:assembleDouyinCnDebug;
 }
-export ANDROID_SERIAL=9A261FFBA007DC
+
 unset compile_dy_options
 unset compile_dy_options_default
 compile_dy_options="default"

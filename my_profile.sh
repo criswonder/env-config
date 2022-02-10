@@ -53,7 +53,17 @@ export PATH=/Users/hongyun/source/personal/depot_tools:/usr/local/opt/curl-opens
 # homebrew配置
 export HOMEBREW_NO_AUTO_UPDATE=true
 
-export ANDROID_SERIAL=9A261FFBA007DC
+#pixel
+# export ANDROID_SERIAL=9A261FFBA007DC
+#pad
+# export ANDROID_SERIAL=M4BPHZAB2EYF4PG
+#mix
+# export ANDROID_SERIAL=65cb7254
+#samsung foldable
+# export ANDROID_SERIAL=R38N405YM4K
+# empty
+# export ANDROID_SERIAL=''
+
 
 source /Users/hongyun/source/personal/env-config/alias.sh
 

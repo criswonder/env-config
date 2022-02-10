@@ -1,6 +1,6 @@
 #!/bin/sh
 install(){
-	adb install ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
+	adb install -d -r ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
 	date;
 }
 

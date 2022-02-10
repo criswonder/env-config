@@ -25,16 +25,44 @@ alias gl='git log'
 alias gh='history|grep '
 alias hg='history|grep '
 
-#adb 
-adb_set_buffer_size='adb -s $ANDROID_SERIAL logcat -G 50m'
-adb_clear='adb -s $ANDROID_SERIAL logcat -c'
-adb_str="${adb_set_buffer_size};adb -s $ANDROID_SERIAL logcat -v color threadtime |grep "
+echo $ANDROID_SERIAL is empty.
+adb_set_buffer_size='adb logcat -G 50m'
+adb_clear='adb logcat -c'
+adb_str="${adb_set_buffer_size};adb logcat -v color threadtime |grep "
 alias adbg=$adb_str
 alias adbcg="${adb_clear};${adb_str}"
-alias adbc="${adb_clear};adb -s ${ANDROID_SERIAL} logcat "
+alias adbc="${adb_clear};adb logcat "
 alias add='adb devices'
-alias adbtag="${adb_clear};${adb_set_buffer_size};adb -s ${ANDROID_SERIAL} logcat -v color tag -s "
-alias adblog="${adb_clear};${adb_set_buffer_size};adb -s ${ANDROID_SERIAL} logcat -v color time "
+alias adbtag="${adb_clear};${adb_set_buffer_size};adb logcat -v color tag -s "
+alias adblog="${adb_clear};${adb_set_buffer_size};adb logcat -v color time "
+
+# if [[ -z $ANDROID_SERIAL ]];
+# then
+#     echo $ANDROID_SERIAL is empty.
+#     adb_set_buffer_size='adb logcat -G 50m'
+#     adb_clear='adb logcat -c'
+#     adb_str="${adb_set_buffer_size};adb logcat -v color threadtime |grep "
+#     alias adbg=$adb_str
+#     alias adbcg="${adb_clear};${adb_str}"
+#     alias adbc="${adb_clear};adb logcat "
+#     alias add='adb devices'
+#     alias adbtag="${adb_clear};${adb_set_buffer_size};adb logcat -v color tag -s "
+#     alias adblog="${adb_clear};${adb_set_buffer_size};adb logcat -v color time "
+#     echo $ANDROID_SERIAL is empty end.
+# else
+#     echo $ANDROID_SERIAL is not empty.
+#     adb support serial
+#     adb_set_buffer_size='adb -s $ANDROID_SERIAL logcat -G 50m'
+#     adb_clear='adb -s $ANDROID_SERIAL logcat -c'
+#     adb_str="${adb_set_buffer_size};adb -s $ANDROID_SERIAL logcat -v color threadtime |grep "
+#     alias adbg=$adb_str
+#     alias adbcg="${adb_clear};${adb_str}"
+#     alias adbc="${adb_clear};adb -s ${ANDROID_SERIAL} logcat "
+#     alias add='adb devices'
+#     alias adbtag="${adb_clear};${adb_set_buffer_size};adb -s ${ANDROID_SERIAL} logcat -v color tag -s "
+#     alias adblog="${adb_clear};${adb_set_buffer_size};adb -s ${ANDROID_SERIAL} logcat -v color time "
+#     echo $ANDROID_SERIAL is not empty end.
+# fi
 
 #gradle debug
 alias openDebug='cp /Users/hongyun/source/personal/env-config/open_debug.properties ~/.gradle/gradle.properties'
