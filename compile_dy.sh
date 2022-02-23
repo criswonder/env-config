@@ -1,12 +1,17 @@
 #!/bin/sh
 install(){
-	adb -s $ANDROID_SERIAL install ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
+	adb install ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
+	# adb -s $ANDROID_SERIAL install ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
 	date;
 }
 
 restart(){
-	adb -s $ANDROID_SERIAL shell am force-stop com.ss.android.ugc.aweme;
-	adb -s $ANDROID_SERIAL shell am start -n com.ss.android.ugc.aweme/.splash.SplashActivity;
+	adb shell am force-stop com.ss.android.ugc.aweme;
+	adb shell am start -n com.ss.android.ugc.aweme/.splash.SplashActivity;
+
+	# adb -s $ANDROID_SERIAL shell am force-stop com.ss.android.ugc.aweme;
+	# adb -s $ANDROID_SERIAL shell am start -n com.ss.android.ugc.aweme/.splash.SplashActivity;
+
 	date;
 }
 

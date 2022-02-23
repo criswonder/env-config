@@ -70,7 +70,7 @@ alias closeDebug='cp /Users/hongyun/source/personal/env-config/close_debug.prope
 
 #实验中的
 alias .='echo $PWD'
-alias rm='rm -i'
+# alias rm='rm -i'
 alias cdD='cd /Users/hongyun/source/douying/aweme'
 alias cdDF='cd /Users/hongyun/source/douying-feature/aweme'
 
