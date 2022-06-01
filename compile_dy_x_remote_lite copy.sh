@@ -1,18 +1,18 @@
 #!/bin/sh
 install(){
-	adb install -d -r ./app/build/outputs/apk/douyinCn/debug/app-douyin-cn-debug.apk;
+	./start.sh pull -f plugins/dylite/tools_plugin/build/outputs/apk/dyliteCn/debug/tools_plugin-dylite-cn-debug.apk;
+	adb push plugins/dylite/tools_plugin/build/outputs/apk/dyliteCn/debug/tools_plugin-dylite-cn-debug.apk /sdcard/Android/data/com.ss.android.ugc.aweme.lite/files/.patchs/;
 	date;
 }
 
 restart(){
-	adb shell am force-stop com.ss.android.ugc.aweme;
-	adb shell am start -n com.ss.android.ugc.aweme/.splash.SplashActivity;
+	adb shell am force-stop com.ss.android.ugc.aweme.lite;
+	adb shell am start -n com.ss.android.ugc.aweme.lite/com.ss.android.ugc.aweme.splash.SplashActivity;
 	date;
 }
 
 compile(){
-	./start.sh -i ./gradlew :app:assembleDouyinCnDebug --max-workers=64;
-	#./start.sh -i ./gradlew :app:assembleDouyinCnRelease --max-workers=64;
+	./start.sh eval "rm switch.local.yml && ./gradlew app:clean :app:assembleDyliteCnDebug -PopenMira=true" --max-workers=64
 }
 
 unset compile_dy_options

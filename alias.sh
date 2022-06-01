@@ -111,6 +111,10 @@ alias remotex_force="./start.sh -f pwd"
 alias remotex_stop="./start.sh ./gradlew --stop"
 alias remotex_clean="./start.sh ./gradlew clean"
 
+#极速版编译
+alias xmd='/Users/hongyun/source/personal/env-config/compile_dy_x_remote_lite.sh'
+alias XMD=xmd
+
 # 打开app的快捷方式
 # alias appify='/Users/hongyun/source/personal/env-config/alias.sh'
 
