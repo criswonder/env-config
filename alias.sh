@@ -1,6 +1,5 @@
 #flutter concern
-alias flutterxg='export FLUTTER_HOME=/Users/hongyun/source/work-flutter/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
-alias fluttergh='export FLUTTER_HOME=/Users/hongyun/source/personal/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
+alias fluttergh='export FLUTTER_HOME=/Users/andy/dev/flutter/sdk/flutter;export PATH=${FLUTTER_HOME}/bin:${PATH}'
 fluttergh
 alias fgu='flutter pub get;flutter pub upgrade'
 
@@ -25,7 +24,7 @@ alias gl='git log'
 alias gh='history|grep '
 alias hg='history|grep '
 
-echo $ANDROID_SERIAL is empty.
+# echo $ANDROID_SERIAL is empty.
 adb_set_buffer_size='adb logcat -G 50m'
 adb_clear='adb logcat -c'
 adb_str="${adb_set_buffer_size};adb logcat -v color threadtime |grep "
@@ -125,3 +124,6 @@ alias frl='flutter run --local-engine-src-path=$FLUTTER_ENGINE_SRC --local-engin
 # alias agco='my_func(){origin_path=`pwd`;gco $1;cd ../XiGuaPublish;pwd;gco $1;cd ../xigua_common;pwd;gco $1;cd $origin_path};my_func'
 # alias agcob='my_func(){origin_path=`pwd`;gco -b $1;cd ../XiGuaPublish;pwd;gco -b $1;cd ../xigua_common;pwd;gco -b $1;cd $origin_path};my_func'
 # alias agpr='my_func(){origin_path=`pwd`;gpr;cd ../XiGuaPublish;pwd;gpr;cd ../xigua_common;pwd;gpr;cd $origin_path};my_func'
+
+alias python='python3'
+alias py='python'

@@ -13,21 +13,16 @@ PROMPT_COMMAND="history -a"
 #aosp 指定编译目录
 export OUT_DIR_COMMON_BASE=/Volumes/ubuntu-extra/out
 nm_sub_dir="ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/arm-linux-androideabi/bin"
-export ANDROID_HOME=/Users/hongyun/Library/Android/sdk
-export SYS_TRACE_DIR=/Users/hongyun/Library/Android/sdk/platform-tools/systrace/
-#export NDK=/Users/hongyun/fish/android-sdk-macosx/ndk-bundle
+export ANDROID_HOME=/Users/andy/Library/Android/sdk
+export SYS_TRACE_DIR=/Users/andy/Library/Android/sdk/platform-tools/systrace/
 export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/${nm_sub_dir}:${SYS_TRACE_DIR}
-# export NDK_HOME=/Users/hongyun/dev/ndk/android-ndk-r15c
-# export NDK_HOME=/Users/hongyun/dev/ndk/android-ndk-r16b
-export PATH="/Users/hongyun/homebrew/opt/openjdk/bin:$PATH"
-#CPPFLAGS="-I/Users/hongyun/homebrew/opt/openjdk/include"
-export PATH="/Users/hongyun/homebrew/bin:$PATH"
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
 
 #flutter cn镜像 https://flutter.cn/community/china
 # export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export PUB_HOSTED_URL=http://dart-pub.byted.org
+# export PUB_HOSTED_URL=http://dart-pub.byted.org
+# export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ##java 相关的
@@ -49,7 +44,7 @@ ulimit -S -n 1024
 [ -f ~/.tbenv/bundler-exec.sh ] && source ~/.tbenv/bundler-exec.shcd 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=/Users/hongyun/source/personal/depot_tools:/usr/local/opt/curl-openssl/bin:$PATH
+export PATH=/usr/local/bin/:/Users/hongyun/source/personal/depot_tools:/usr/local/opt/curl-openssl/bin:$PATH
 
 # homebrew配置
 export HOMEBREW_NO_AUTO_UPDATE=true
@@ -66,5 +61,5 @@ export HOMEBREW_NO_AUTO_UPDATE=true
 # export ANDROID_SERIAL=''
 
 
-source /Users/hongyun/source/personal/env-config/alias.sh
+source /Users/andy/source/personal/env-config/alias.sh
 
